@@ -3,11 +3,11 @@ package com.seunmeme.recipesjournal.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Timestamp;
 
 @Data
 @NoArgsConstructor
@@ -27,8 +27,9 @@ public class User {
     private String dob;
     private String gender;
 
-//    @OneToMany(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "userId", referencedColumnName = "id")
-//    List<Post> posts = new ArrayList<>();
+    @CreationTimestamp
+    @Column(name="dateCreated", nullable=false, updatable=false)
+    private Timestamp dateCreated;
+
 }
 

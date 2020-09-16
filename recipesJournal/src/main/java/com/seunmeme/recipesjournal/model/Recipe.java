@@ -3,9 +3,12 @@ package com.seunmeme.recipesjournal.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,9 +26,14 @@ public class Recipe {
     private String title;
     private String content;
     private String imageUrl = "/images/products/fun-to-eat-spaghetti-salad.jpg";
-    @CreatedDate
+
+    @CreationTimestamp
     @Column(name="dateCreated", nullable=false, updatable=false)
-    private LocalDateTime dateCreated = LocalDateTime.now();
+    private Timestamp dateCreated;
+
+    @UpdateTimestamp
+    @Column(name="updatedAt", nullable=false)
+    private Timestamp updatedAt;
 
     @ManyToOne(cascade = CascadeType.MERGE, fetch= FetchType.EAGER)
     @JoinColumn(name="userId", referencedColumnName = "id")

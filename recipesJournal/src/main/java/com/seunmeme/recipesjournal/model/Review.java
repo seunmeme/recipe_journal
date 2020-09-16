@@ -3,10 +3,11 @@ package com.seunmeme.recipesjournal.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.CreatedDate;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
+
 
 @Data
 @NoArgsConstructor
@@ -18,12 +19,16 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String content;
-    @CreatedDate
+
+
+    @CreationTimestamp
     @Column(name="dateCreated", nullable=false, updatable=false)
-    private LocalDateTime dateCreated = LocalDateTime.now();
+    private Timestamp dateCreated;
 
     @ManyToOne(cascade = CascadeType.MERGE, fetch= FetchType.EAGER)
     @JoinColumn(name="userId", referencedColumnName = "id")
     private User user;
+
+
 
 }

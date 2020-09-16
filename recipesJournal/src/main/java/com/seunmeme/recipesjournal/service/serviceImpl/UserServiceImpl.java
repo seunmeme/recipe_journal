@@ -15,12 +15,11 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserRepository userRepository;
 
-    @Autowired
-    HttpSession session;
+
 
 
     @Override
-    public String login(User user, Model model) {
+    public String login(User user, Model model, HttpSession session) {
         try {
             User checkUser = findByEmail(user.getEmail());
             if(checkUser.getPassword().equals(user.getPassword()) ){
@@ -36,7 +35,7 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public String register(User user, Model model) {
+    public String register(User user, Model model, HttpSession session) {
 
 //        if the user already exists, return to home page
         if(existsByEmail(user.getEmail())){
