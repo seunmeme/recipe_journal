@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="683e95a8-f07c-47ac-b0a1-e409d716ba61" name="Default Changelist" comment="" />
+    <list default="true" id="683e95a8-f07c-47ac-b0a1-e409d716ba61" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipesJournal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/recipesJournal/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipesJournal/src/main/java/com/seunmeme/demo/RecipresJournalApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipesJournal/src/main/java/com/seunmeme/recipesjournal/RecipesJournalApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipesJournal/src/test/java/com/seunmeme/demo/RecipresJournalApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipesJournal/src/test/java/com/seunmeme/demo/RecipesJournalApplicationTests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,11 +49,28 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600241263787</updated>
-      <workItem from="1600241265578" duration="307000" />
+      <workItem from="1600241265578" duration="1380000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="8" y="59" key="new project wizard" timestamp="1600241418412">
+      <screen x="0" y="23" width="1280" height="746" />
+    </state>
+    <state x="8" y="59" key="new project wizard/0.23.1280.746@0.23.1280.746" timestamp="1600241418412" />
   </component>
 </project>
