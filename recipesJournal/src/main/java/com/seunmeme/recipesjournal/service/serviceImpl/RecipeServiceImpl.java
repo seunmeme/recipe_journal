@@ -23,8 +23,13 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public Recipe getPostById(Long id) {
+    public Recipe getRecipeById(Long id) {
         return recipeRepository.findRecipeById(id);
+    }
+
+    @Override
+    public void deleteRecipe(Recipe recipe) {
+        recipeRepository.delete(recipe);
     }
 
 }

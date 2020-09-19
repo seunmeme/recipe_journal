@@ -21,9 +21,6 @@
 <!-- Links -->
     <div class="collapse navbar-collapse justify-content-end" id="nav-content">   
             <ul class="navbar-nav">
-                <li class="nav-item  active">
-                    <a class="nav-link" th:href="@{/recipes}">Home</a>
-                </li>
                <li class="nav-item" style="margin-right: 5px">
                    <button type="button" class="btn btn-success btn-sm btn-block" data-toggle="modal" data-target="#newPost">Add New Recipe</button>
                </li>
@@ -79,27 +76,20 @@
                 </tr>
                 </thead>
 
-                <tbody th:each="recipe: ${recipes}">
+                <tbody th:each="rec: ${recipes}">
                     <tr>
-                        <td th:text="${recipe.title}"></td>
-                        <td><img th:attr="src=${recipe.imageUrl }" class="rounded img-fluid" alt="Fun to eat Spaghetti Salad"></td>
-                        <td th:text="${recipe.content}">
-<!--                            <div class="card mb-2">-->
-<!--                                <div class="card-body">-->
-<!--                                    <p th:text="${recipe.content}"></p>-->
-<!--&lt;!&ndash;                                    <blockquote class="blockquote mb-0">&ndash;&gt;-->
-
-<!--&lt;!&ndash;                                        <footer class="blockquote-footer">posted by&ndash;&gt;-->
-<!--&lt;!&ndash;                                            <cite title="Source Title" th:text= ${recipe.user}></cite>&ndash;&gt;-->
-<!--&lt;!&ndash;                                            &lt;!&ndash;                                        <cite title="Source Title" th:text= ${recipe.user}></cite>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;                                        </footer>&ndash;&gt;-->
-<!--&lt;!&ndash;                                    </blockquote>&ndash;&gt;-->
-
-<!--                                </div>-->
-<!--                            </div>-->
+                        <td th:text="${rec.title}"></td>
+                        <td><img th:attr="src=${rec.imageUrl }" class="rounded img-fluid" alt="Fun to eat Spaghetti Salad"></td>
+                        <td th:text="${rec.content}"></td>
+                        <td>
+                            <a th:attr="href=${'getRecipe/' + rec.id}"  type="button" class="btn btn-warning"><i class="fa fa-eye" aria-hidden="true"></i> View</a>
+                            <div style="margin-top: 8px">
+                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <span th:text="${rec.upVotes.size()}"></span>
+                                <i style="margin-left: 8px" class="fa fa-thumbs-o-down" aria-hidden="true"></i> <span th:text="${rec.downVotes.size()}"></span>
+                            </div>
+<!--                            <p><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> <span th:text="${rec.downVotes.size()}"></span></p>-->
 
                         </td>
-                        <td><a th:attr="href=${'getRecipe/' + recipe.id}"  type="button" class="btn btn-warning"><i class="fa fa-eye" aria-hidden="true"></i> View</a></td>
                     </tr>
                 </tbody>
                 </table>

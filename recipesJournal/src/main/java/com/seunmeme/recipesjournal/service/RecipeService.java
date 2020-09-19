@@ -8,5 +8,7 @@ public interface RecipeService {
 
     public Iterable<Recipe> getRecipes();
 
-    public Recipe getPostById(Long id);
+    public Recipe getRecipeById(Long id);
+
+    public void deleteRecipe(Recipe recipe);
 }

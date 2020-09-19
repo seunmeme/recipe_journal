@@ -19,4 +19,7 @@ public class DownVote {
     @JoinColumn(name="userId", referencedColumnName = "id")
     private User user;
 
+    public DownVote(User user) {
+        this.user = user;
+    }
 }
