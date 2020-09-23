@@ -34,6 +34,7 @@ public class RecipesController {
         return "index";
     }
 
+    //Route for login page
     @GetMapping("/login")
     public String viewLoginPage(Model model){
 
@@ -44,13 +45,18 @@ public class RecipesController {
         return "login";
     }
 
+    //Route for displaying dashboard
     @GetMapping("/recipes")
     public String viewDashboard(Model model){
+        HttpSession session = null;
+//        User user = (User)session.getAttribute("user");
 
         Recipe recipe = new Recipe();
         Iterable<Recipe> recipes = recipeService.getRecipes();
 //        add recipes to the model
         model.addAttribute("recipes", recipes);
+//        model.addAttribute("usee", user);
+
         model.addAttribute("recipe", recipe);
 
         return "dashboard";
@@ -58,14 +64,14 @@ public class RecipesController {
 
     // Route for registration
     @PostMapping("/register")
-    public String addUser(User user, Model model, HttpSession session){
-        return userService.register(user, model, session);
+    public String addUser(User user, Model model){
+        return userService.register(user, model);
     }
 
     //Route for user login
     @PostMapping("/login")
-    public String login(User user, Model model, HttpSession session){
-        return userService.login(user, model, session);
+    public String login(User user, Model model){
+        return userService.login(user, model);
     }
 
     //    Route for adding recipe
@@ -119,9 +125,9 @@ public class RecipesController {
     @GetMapping("/upVote/{recipeId}")
     public String upVote(HttpSession session, @PathVariable String recipeId) {
         Recipe recipe = recipeService.getRecipeById(Long.parseLong(recipeId));
-        User user = (User)session.getAttribute("user");
 
-        UpVote vote = new UpVote(user);
+        UpVote vote = new UpVote();
+        vote.setUser(recipe.getUser());
         recipe.getUpVotes().add(vote);
 
         recipeService.addRecipe(recipe);
@@ -134,9 +140,9 @@ public class RecipesController {
     @GetMapping("/downVote/{recipeId}")
     public String downVote(HttpSession session, @PathVariable String recipeId) {
         Recipe recipe = recipeService.getRecipeById(Long.parseLong(recipeId));
-        User user = (User)session.getAttribute("user");
 
-        DownVote downVote = new DownVote(user);
+        DownVote downVote = new DownVote();
+        downVote.setUser(recipe.getUser());
         recipe.getDownVotes().add(downVote);
 
         recipeService.addRecipe(recipe);
@@ -157,4 +163,5 @@ public class RecipesController {
         return "redirect:/recipes";
 
     }
+
 }

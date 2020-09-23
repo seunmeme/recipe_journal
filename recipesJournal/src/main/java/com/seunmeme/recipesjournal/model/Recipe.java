@@ -35,7 +35,7 @@ public class Recipe {
     @Column(name="updatedAt", nullable=false)
     private Timestamp updatedAt;
 
-    @ManyToOne(cascade = CascadeType.MERGE, fetch= FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinColumn(name="userId", referencedColumnName = "id")
     private User user;
 

@@ -12,11 +12,14 @@
   <component name="ChangeListManager">
     <list default="true" id="683e95a8-f07c-47ac-b0a1-e409d716ba61" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipesJournal/src/main/java/com/seunmeme/recipesjournal/controller/RecipesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipesJournal/src/main/java/com/seunmeme/recipesjournal/controller/RecipesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipesJournal/src/main/java/com/seunmeme/recipesjournal/model/DownVote.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipesJournal/src/main/java/com/seunmeme/recipesjournal/model/DownVote.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recipesJournal/src/main/java/com/seunmeme/recipesjournal/model/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipesJournal/src/main/java/com/seunmeme/recipesjournal/model/Recipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipesJournal/src/main/java/com/seunmeme/recipesjournal/model/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipesJournal/src/main/java/com/seunmeme/recipesjournal/model/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipesJournal/src/main/java/com/seunmeme/recipesjournal/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipesJournal/src/main/java/com/seunmeme/recipesjournal/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipesJournal/src/main/java/com/seunmeme/recipesjournal/model/UpVote.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipesJournal/src/main/java/com/seunmeme/recipesjournal/model/UpVote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipesJournal/src/main/java/com/seunmeme/recipesjournal/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipesJournal/src/main/java/com/seunmeme/recipesjournal/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipesJournal/src/main/java/com/seunmeme/recipesjournal/service/serviceImpl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipesJournal/src/main/java/com/seunmeme/recipesjournal/service/serviceImpl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recipesJournal/src/main/resources/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/recipesJournal/src/main/resources/templates/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipesJournal/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/recipesJournal/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipesJournal/src/main/resources/templates/recipe-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/recipesJournal/src/main/resources/templates/recipe-details.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +45,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -52,6 +61,7 @@
       <option name="presentableId" value="Default" />
       <updated>1600241263787</updated>
       <workItem from="1600241265578" duration="1596000" />
+      <workItem from="1600844527455" duration="713000" />
     </task>
     <servers />
   </component>
@@ -68,6 +78,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="8" y="59" key="new project wizard" timestamp="1600241418412">
