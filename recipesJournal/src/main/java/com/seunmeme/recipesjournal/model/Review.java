@@ -25,7 +25,7 @@ public class Review {
     @Column(name="dateCreated", nullable=false, updatable=false)
     private Timestamp dateCreated;
 
-    @ManyToOne(cascade = CascadeType.MERGE, fetch= FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.DETACH, fetch= FetchType.EAGER)
     @JoinColumn(name="userId", referencedColumnName = "id")
     private User user;
 

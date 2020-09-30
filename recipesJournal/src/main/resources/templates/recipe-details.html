@@ -41,13 +41,13 @@
                         <h4 th:text="${recipe.title}"></h4>
                         <p th:text="${recipe.content}">
                         </p>
-<!--                        <blockquote class="blockquote mb-0">-->
+                        <blockquote class="blockquote mb-0">
 
-<!--                            <footer class="blockquote-footer">posted by-->
-<!--                                <cite title="Source Title" th:text= ${recipe.user}></cite>-->
-<!--                                <cite title="Source Title" th:text= ${recipe.user}></cite>-->
-<!--                            </footer>-->
-<!--                        </blockquote>-->
+                            <footer class="blockquote-footer">posted by
+                                <cite title="Source Title" th:text= ${recipe.user.firstname}></cite>
+                                <cite title="Source Title" th:text= ${recipe.user.lastname}></cite>
+                            </footer>
+                        </blockquote>
                         <p style="margin-top: 4px;">
                             <a th:attr="href=@{'/upVote/'} + ${recipe.id}" class="btn btn-success"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Upvote</a>
                             <a th:attr="href=@{'/downVote/'} + ${recipe.id}" class="btn btn-secondary"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> Downvote</a>
@@ -74,13 +74,6 @@
                         <div th:each="rev: ${recipe.getReviews()}">
                             <p th:text="${rev.content}">
                             </p>
-<!--                            <blockquote class="blockquote mb-0">-->
-
-<!--                                <footer class="blockquote-footer">posted by-->
-<!--                                    <cite title="Source Title" th:text= ${rev.user}></cite>-->
-<!--                                    <cite title="Source Title" th:text= ${rev.user}></cite>-->
-<!--                                </footer>-->
-<!--                            </blockquote>-->
                         </div>
 
 

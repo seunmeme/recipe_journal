@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import javax.servlet.http.HttpSession;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -16,13 +17,13 @@ public class UserServiceImpl implements UserService {
     UserRepository userRepository;
 
     @Override
-    public String login(User user, Model model) {
-        HttpSession session = null;
+    public String login(User user, Model model, HttpSession session) {
+
         try {
-            User checkUser = findByEmail(user.getEmail());
-            if(checkUser.getPassword().equals(user.getPassword()) ){
-                session.setAttribute("user", checkUser);
-                model.addAttribute("user", checkUser);
+            Optional<User> checkUser = Optional.ofNullable(findByEmail(user.getEmail()));
+            if(checkUser.get().getPassword().equals(user.getPassword()) ){
+                session.setAttribute("user", checkUser.get());
+                model.addAttribute("user", checkUser.get());
             }
         }catch(Exception ex){
             return "redirect:/";
@@ -33,15 +34,14 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public String register(User user, Model model ) {
-        HttpSession session = null;
+    public String register(User user, Model model, HttpSession session ) {
 //        if the user already exists, return to home page
         if(existsByEmail(user.getEmail())){
             return "redirect:/";
         }else{
             User theUser = findByEmail(user.getEmail());
             userRepository.save(user);
-            session.setAttribute("user", theUser);
+            session.setAttribute("usee", theUser);
             model.addAttribute("user", theUser);
 
             return "redirect:/recipes";

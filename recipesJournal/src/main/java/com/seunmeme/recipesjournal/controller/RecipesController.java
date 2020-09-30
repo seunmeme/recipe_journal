@@ -47,15 +47,14 @@ public class RecipesController {
 
     //Route for displaying dashboard
     @GetMapping("/recipes")
-    public String viewDashboard(Model model){
-        HttpSession session = null;
-//        User user = (User)session.getAttribute("user");
+    public String viewDashboard(Model model, HttpSession session){
+        User user = (User)session.getAttribute("user");
 
         Recipe recipe = new Recipe();
         Iterable<Recipe> recipes = recipeService.getRecipes();
 //        add recipes to the model
         model.addAttribute("recipes", recipes);
-//        model.addAttribute("usee", user);
+        model.addAttribute("user", user);
 
         model.addAttribute("recipe", recipe);
 
@@ -64,14 +63,14 @@ public class RecipesController {
 
     // Route for registration
     @PostMapping("/register")
-    public String addUser(User user, Model model){
-        return userService.register(user, model);
+    public String addUser(User user, Model model, HttpSession session){
+        return userService.register(user, model, session);
     }
 
     //Route for user login
     @PostMapping("/login")
-    public String login(User user, Model model){
-        return userService.login(user, model);
+    public String login(User user, Model model, HttpSession session){
+        return userService.login(user, model, session);
     }
 
     //    Route for adding recipe
